@@ -1,0 +1,46 @@
+Exercices (requêtes SQL)
+
+La base 'clicom' répertorie une liste de clients avec leur informations personnelles, ainsi qu'une liste de commandes contenant pour chacune une ou plusieurs produits.
+
+Après avoir importé la base 'clicom' dans votre phpmyadmin, réalisez les exercices suivants puis présentez votre travail à un formateur.
+
+Aidez-vous des cours sur nCode et des fonctions SQL existantes (vous pouvez retrouver une liste non exhaustive sur le site sql.sh).
+Vous aurez besoin notamment des syntaxes SELECT, INSERT, UPDATE, DELETE, des mots clés WHERE, CASE...WHEN, GROUP BY, HAVING et ORDER et des fonctions SUM(), YEAR() et MONTH().
+
+Bon courage !
+
+
+
+1- Afficher les clients qui ont pour prénom "Muriel", triés par ordre alphabétique sur le Nom
+
+2- Afficher le client ayant le prénom “Muriel” et le mot de passe “test11”, sachant que l’encodage du mot de passe est effectué avec l’algorithme Sha1 (fonction à utiliser : SHA1() )
+
+3- Afficher la liste des produits qui sont présents sur plusieurs commandes.
+
+4- Mettre à jour le prix total à l’intérieur de chaque commande, en fonction du prix unitaire et de la quantité
+
+5- Afficher pour chaque commande : n° de commande, date de la commande, montant total de la commande (attention : la rubrique "com_cache_prix_total" n'est pas renseignée pour le moment, elle ne peut pas être utilisée)
+6- Afficher pour chaque commande : n° de commande, date de la commande, montant total de la commande, nom et prénom du client
+
+7- Mettre à jour le montant total de chaque commande dans le champ intitulé “com_cache_prix_total”
+
+8- Afficher le montant global de toutes les commandes, pour chaque mois
+
+9- Afficher la liste des 10 clients qui ont effectué le plus grand montant de commandes, et obtenir ce montant total pour chaque client.
+
+10- Afficher le montant total des commandes pour chaque date
+
+11- Créer une table intitulée “categorie” qui contiendra un identifiant ("cat_id") et un descriptif ("cat_nom")
+
+12- Ajouter dans la table "categorie" des enregistrements pour les catégories suivantes
+    “1” : commandes de moins de 200€
+    “2” : commandes entre 200€ et 500€
+    “3” : commandes entre 500€ et 1.000€
+    “4” : commandes supérieures à 1.000€
+
+13- Modifier la table "commande" pour lui ajouter une colonne “com_cat_id” contenant les catégories des commandes.
+Cette nouvelle rubrique doit référencer une clé étrangère vers la table "categorie"
+
+13- Mettre à jour la valeur de la nouvelle colonne "com_cat_id", selon le montant total de la commande (utiliser la syntaxe CASE ... WHEN)
+
+15- Supprimer toutes les commandes (et les lignes des commandes) antérieures au 1er février 2019. Cela doit être effectué en 2 requêtes maximum
